@@ -63,8 +63,8 @@ client.once('ready', () => {
 });
 
 client.on('message', async message => {
-    if(message.member.guild.voice.channel) {
-        const connection = message.member.guild.voice.channel.join();
+    if(message.member.voice.channel) {
+        const connection = await message.member.voice.channel.join();
     }
 });
 
