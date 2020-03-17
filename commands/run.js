@@ -1,3 +1,5 @@
+const purge = require('./prune.js');
+
 module.exports = {
     name: 'run',
     usage: '<message>',
@@ -16,7 +18,7 @@ module.exports = {
             msg = msg + args[i];
             ++i;
         }
-
+        prune.execute(message,1);
         message.channel.send(msg);
     },
 }
