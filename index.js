@@ -3,10 +3,11 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const fs = require('fs');
 const cooldowns = new Discord.Collection();
-const { prefix, token } = require('./config.json');
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const embed = new Discord.MessageEmbed();
+const prefix = '-';
+
 
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
