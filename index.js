@@ -58,6 +58,8 @@ client.on('message', message => {
 
 client.once('ready', () => {
     console.log('Ready!');
+    message.channel.send('Hello amigots');
+    
 });
 
 client.on('guildMemberAdd', member => {
