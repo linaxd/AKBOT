@@ -65,6 +65,17 @@ client.once('ready', () => {
 client.on('message', async message => {
     if(message.member.voice.channel) {
         const connection = await message.member.voice.channel.join();
+        
+        const Dispatcher = connection.play('https://www.youtube.com/watch?v=ixkoVwKQaJg');
+        Dispatcher.on('start', () => {
+            message.channel.send('Playing audio');
+        });
+        
+        Dispatcher.on('finish', () => {
+            message.channel.send('Finished Playing');
+        });
+        
+        Dispatcher.on('error', console.error);
     }
 });
 
