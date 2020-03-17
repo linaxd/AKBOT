@@ -18,7 +18,7 @@ module.exports = {
             msg = msg + args[i];
             ++i;
         }
-        purge.execute(message,1);
+        purge.execute(message, '0');
         message.channel.send(msg);
     },
 }
