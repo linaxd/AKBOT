@@ -65,7 +65,7 @@ client.once('ready', () => {
 client.on('message', async message => {
     if(message.member.voice.channel) {
         const connection = await message.member.voice.channel.join();
-        const dispatcher = connection.play('Air.mp3');
+        const dispatcher = connection.play('./Air.mp3');
         dispatcher.on('start', () => {
             console.log('Playing audio');
         });
