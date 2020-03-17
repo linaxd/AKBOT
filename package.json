@@ -20,7 +20,7 @@
 
     "request": "2.81.0",
     "discordjs/opus": "0.1.0",
-    "ffmpeg": "0.0.4"
+    "ffmpeg": "0.0.4",
     "sodium": "3.0.2"
 
   }
