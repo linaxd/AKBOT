@@ -65,17 +65,16 @@ client.once('ready', () => {
 client.on('message', async message => {
     if(message.member.voice.channel) {
         const connection = await message.member.voice.channel.join();
-        
-        const Dispatcher = connection.play('https://www.youtube.com/watch?v=ixkoVwKQaJg');
-        Dispatcher.on('start', () => {
-            message.channel.send('Playing audio');
+        const dispatcher = connection.play('Air.mp3');
+        dispatcher.on('start', () => {
+            console.log('Playing audio');
         });
         
-        Dispatcher.on('finish', () => {
-            message.channel.send('Finished Playing');
+        dispatcher.on('finish', () => {
+            console.log('Finished playing'); 
         });
         
-        Dispatcher.on('error', console.error);
+        dispatcher.on('error', console.error);
     }
 });
 
