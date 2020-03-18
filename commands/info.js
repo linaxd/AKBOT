@@ -36,12 +36,12 @@ module.exports = {
             return_string += `\nUser Tag: **${user.tag}**`;
             return_string += `\nUser ID: **${user.id}**`;
             return_string += `\nCreated on: **${user.createdAt}**`;
-            return_string += `\n Avatar URL: <${user.displayAvatarURL({format: 'png', dynamic: true})}>`;
+            //return_string += `\n Avatar URL: <${user.displayAvatarURL({format: 'png', dynamic: true})}>`;
 
             const embedObj = {
                 color: '#00ff00',
                 description: `${return_string}`,
-                avatarURL: `<${user.displayAvatarURL({format: 'png', dynamic: true})}>`,
+                image: `<${user.displayAvatarURL({format: 'png', dynamic: true})}>`,
             };
 
             message.channel.send({ embed: embedObj});
