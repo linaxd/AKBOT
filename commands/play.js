@@ -3,6 +3,7 @@ require('./functions.js')();
 module.exports = {
     name: 'play',
     usage: '<url>',
+    aliases: ['p'],
     arg: true,
     ytdl: true,
     execute(message, args, ytdl, embed) {
