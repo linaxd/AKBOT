@@ -43,8 +43,8 @@ client.on('message', message => {
             command.execute(message, args, embed);
         else if (command.embed && command.client)
             command.execute(message, args, client, embed);
-        else if (command.embed && command.client && command.arg)
-            command.execute(message, args, client, embed);
+        else if (command.connection)
+            command.execute(message, args, connection);
         else
             command.execute(message, args);
 
