@@ -14,12 +14,8 @@ module.exports = {
         if (user) {
             const member = message.guild.member(user);
             if (member) {
-                member
-                    .kick(`for ${reason}`)
-                    .then(() => {
-                        return `Kicked ${user.username} for ${reason}`;
-                    })
-                    .catch(err => {
+                member.kick(`for ${reason}`).then(() => {
+                        return `Kicked ${user.username} for ${reason}`;}).catch(err => {
                         message.reply('Unable to to kick the member');
                         console.error(err);
                     });
