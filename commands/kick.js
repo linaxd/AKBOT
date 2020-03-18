@@ -9,7 +9,7 @@ module.exports = {
     embed: true,
     client: true,
     execute(message, args, client) {
-        const reason = message.content.slice(1 + this.name.length + user.id.length + 6);
+        const reason = joinTogetherWords(args, 1, args.length - 1);
         const user = getUserFromMention(args[0], client);
         if (user) {
             const member = message.guild.member(user);
