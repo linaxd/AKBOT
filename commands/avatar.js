@@ -9,7 +9,7 @@ module.exports = {
     description: 'get avatar or avater URL',
     usage: '<user>',
     execute(message, args, client, embed) {
-        if (!message.mentions.users.size) {
+        if (!args.length) {
             const embedObj = {
                 title: `**${message.author.tag}**`,
                 image: {
