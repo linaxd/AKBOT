@@ -18,7 +18,7 @@ module.exports = {
         const embObj = {
             title: '**Music**',
             color: '#009911',
-            description: `**Playing ${key_Word}`,
+            description: `**Playing ${key_Word} 🎵🎵**`,
         };
 
         message.channel.send({ embed: embObj });
