@@ -41,8 +41,8 @@ module.exports = {
             const embedObj = {
                 color: '#00ff00',
                 description: `${return_string}`,
-                file: `<${user.displayAvatarURL({ format: 'png', dynamic: true })}>`,
-                image: `attachment://${user.displayAvatarURL({dynamic: true})}`,
+                file: [`${user.displayAvatarURL({ format: 'png', dynamic: true })}`],
+                image: `attachment${user.displayAvatarURL({dynamic: true})}`,
             };
 
             message.channel.send({ embed: embedObj });
