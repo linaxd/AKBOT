@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
+const fs = require('fs');
+const ytdl = require('ytdl-core');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
 
 const embed = new Discord.MessageEmbed();
-const fs = require('fs');
 
 const prefix = '-';
 
@@ -44,8 +45,8 @@ client.on('message', message => {
             command.execute(message, args, embed);
         else if (command.embed && command.client)
             command.execute(message, args, client, embed);
-        else if (command.connection)
-            command.execute(message, args, connection);
+        else if (command.ytdl)
+            command.execute(message, args, ytdl);
         else
             command.execute(message, args);
 
