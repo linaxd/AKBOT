@@ -13,7 +13,7 @@ module.exports = {
         quality_arg = false;
         quality_given = 0;
 
-        if (args.length > 1) {
+        if (args.length > 1 && (args[args.length - 1].startsWith('highest') || args[args.length - 1].startsWith('lowest') )) {
             quality = `${args[args.length - 1]}audio`;
             quality_arg = true;
         }
