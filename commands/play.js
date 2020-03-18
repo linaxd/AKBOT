@@ -1,4 +1,5 @@
 require('./functions.js')();
+const purge = require('./prune.js');
 
 module.exports = {
     name: 'play',
@@ -33,6 +34,8 @@ module.exports = {
             description: `**Playing ${key_Word} 🎵🎵**`,
         };
 
+
+        purge.execute(message, '2');
         message.channel.send({ embed: embObj });
 
         voiceChannel.join().then(connection => {
