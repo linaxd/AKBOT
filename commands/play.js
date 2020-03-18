@@ -12,8 +12,8 @@ module.exports = {
         key_Word = joinTogetherWords(args, 0);
         quality = 'lowestaudio';
 
-        if (args[1].length) {
-            quality = `${args[1]}audio`;
+        if (args.length > 1) {
+            quality = `${args[args.length - 1]}audio`;
         }
             
 
