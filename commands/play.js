@@ -1,9 +1,3 @@
-const yt = require('ytdl-core-discord');
-
-async function play(connection, url) {
-    connection.playOpusStream(await yt(url))
-}
-
 module.exports = {
     name: 'play',
     usage: '<url>',
