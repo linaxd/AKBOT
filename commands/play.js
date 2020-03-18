@@ -9,14 +9,19 @@ module.exports = {
     execute(message, args, ytdl, embed) {
         if (message.channel.type !== 'text') return;
 
-        key_Word = joinTogetherWords(args, 0, args.length - 1);
         quality = 'lowestaudio';
+        quality_arg = false;
+        quality_given = 0;
 
         if (args.length > 1) {
             quality = `${args[args.length - 1]}audio`;
+            quality_arg = true;
         }
-            
+        if (quality_arg)
+            quality_given = 1;
 
+        key_Word =  joinTogetherWords(args, 0, args.length - 1 - quality_given);
+            
         const voiceChannel = message.member.voice.channel;
         if (!voiceChannel) {
             return message.reply('please join a voice channel first');
