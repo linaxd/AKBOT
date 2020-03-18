@@ -33,6 +33,7 @@ module.exports = {
             }
 
             return_string = `**${user.username}**`;
+            return_string += `\nUser Tag: **${user.tag}**`;
             return_string += `\nUser ID: **${user.id}**`;
             return_string += `\nCreated on: **${user.createdAt}**`;
             return_string += `\n Avatar URL: <${user.displayAvatarURL({format: 'png', dynamic: true})}>`;
