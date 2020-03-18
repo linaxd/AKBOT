@@ -17,7 +17,7 @@ module.exports = {
         const embedObj = {
             title: `**${user.tag}**`,
             image: {
-                url: `${user.displayAvatarURL({dynamic: true})}`,
+                url: `${user.displayAvatarURL({dynamic: true, format: 'png'})}`,
             },
         }
         message.channel.send({ embed: embedObj });
