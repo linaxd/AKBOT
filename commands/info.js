@@ -43,12 +43,8 @@ module.exports = {
                 description: `${return_string}`,
                 file: `<${user.displayAvatarURL({format: 'png', dynamic: true})}>`,
             };
-
-<<<<<<< HEAD
             message.channel.send({ embed: embedObj, files: [`${user.displayAvatarURL({format: 'png', dynamic: true})}`]});
-=======
-            message.channel.send({ embed: embedObj, files: [`<${user.displayAvatarURL({format: 'png', dynamic: true})}>`]});
->>>>>>> d24395a4a643f5444726a4dabd5841446b27ff2f
+
         }
     },
 };
