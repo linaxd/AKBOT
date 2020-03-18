@@ -7,6 +7,6 @@ module.exports = {
         if (!voiceChannel) return;
 
         voiceChannel.leave();
-        return message.channel.send('**SKipped Music**');
+        return message.channel.send('**Skipped Music**');
     }
 };
