@@ -10,14 +10,16 @@ module.exports = {
     usage: '<user>',
     execute(message, args, client, embed) {
         if (!message.mentions.users.size) {
-            return message.channel.send(`Your avatar: <${message.author.displayAvatarURL(true)}>`);
+            const embedObj = {
+                title: `**${message.author.user.tag}**`,
+                image: {
+                    url: `${message.author.user.displayAvatarURL({dynamic: true, format: 'png', size: 2048})}`,
+                },
+            }
+
+            return message.channel.send({embed: embedObj});
         }
-        user;
-        if (!args.length) {
-            user = GetUserFromMention(args[0], client);
-        } else {
-            user = message.author;
-        }
+        const user = GetUserFromMention(args[0], client);
 
         const embedObj = {
             title: `**${user.tag}**`,
