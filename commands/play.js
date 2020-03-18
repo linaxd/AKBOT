@@ -9,7 +9,7 @@ module.exports = {
     execute(message, args, ytdl, embed) {
         if (message.channel.type !== 'text') return;
 
-        key_Word = joinTogetherWords(args, 0);
+        key_Word = joinTogetherWords(args, 0, args.length - 1);
         quality = 'lowestaudio';
 
         if (args.length > 1) {

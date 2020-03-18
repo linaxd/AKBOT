@@ -10,11 +10,11 @@ module.exports = function() {
         return client.users.cache.get(input);
     };
 
-    this.joinTogetherWords = function (args, start_pos) { 
+    this.joinTogetherWords = function (args, start_pos, end_pos) { 
         i = start_pos;
         first_word = true;
         return_string = '';
-        
+
         while (i < args.length) {
             if (first_word)
                 first_word = false;
