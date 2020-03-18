@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args, ytdl) {
         const voiceChannel = message.member.voice.channel;
         if (!voiceChannel) return;
-
+        
         voiceChannel.leave();
     }
 };

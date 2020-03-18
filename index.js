@@ -46,7 +46,7 @@ client.on('message', message => {
         else if (command.embed && command.client)
             command.execute(message, args, client, embed);
         else if (command.ytdl)
-            command.execute(message, args, ytdl);
+            command.execute(message, args, ytdl, embed);
         else
             command.execute(message, args);
 
