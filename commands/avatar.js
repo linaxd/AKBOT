@@ -1,8 +1,7 @@
 require('./functions.js')();
 
 module.exports = {
-    arg: true,
-    usage: '<user>',
+    usage: '(optional)<user>',
     name: 'avatar',
     client: true,
     embed: true,
@@ -13,8 +12,13 @@ module.exports = {
         if (!message.mentions.users.size) {
             return message.channel.send(`Your avatar: <${message.author.displayAvatarURL(true)}>`);
         }
+        user;
+        if (!args.length) {
+            user = GetUserFromMention(args[0], client);
+        } else {
+            user = message.author;
+        }
 
-        const user = GetUserFromMention(args[0], client);
         const embedObj = {
             title: `**${user.tag}**`,
             image: {
