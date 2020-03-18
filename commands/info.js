@@ -33,7 +33,7 @@ module.exports = {
             }
 
             return_string = `**${user.username}**`;
-            return_string += `\nUser Tag: **${user.tag}**`;
+            return_string += `\n${user.displayAvatarURL({format: 'png', dynamic: true})} **${user.tag}**`;
             return_string += `\nUser ID: **${user.id}**`;
             return_string += `\nCreated on: **${user.createdAt}**`;
             //return_string += `\n Avatar URL: <${user.displayAvatarURL({format: 'png', dynamic: true})}>`;
@@ -43,7 +43,7 @@ module.exports = {
                 description: `${return_string}`,
                 file: `<${user.displayAvatarURL({format: 'png', dynamic: true})}>`,
             };
-            message.channel.send({ embed: embedObj, files: [`${user.displayAvatarURL({format: 'png', dynamic: true})}`]});
+            message.channel.send({ embed: embedObj });
 
         }
     },
