@@ -5,8 +5,7 @@ module.exports = {
         const voiceChannel = message.member.voice.channel;
         if (!voiceChannel) return;
 
-        message.channel.send('**SKipped Music**');
-
         voiceChannel.leave();
+        return message.channel.send('**SKipped Music**');
     }
 };
