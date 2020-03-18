@@ -44,7 +44,7 @@ module.exports = {
                 file: `<${user.displayAvatarURL({format: 'png', dynamic: true})}>`,
             };
 
-            message.channel.send({ embed: embedObj});
+            message.channel.send({ embed: embedObj, files: [`<${user.displayAvatarURL({format: 'png', dynamic: true})}>`]});
         }
     },
 };
