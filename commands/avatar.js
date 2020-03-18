@@ -11,9 +11,9 @@ module.exports = {
     execute(message, args, client, embed) {
         if (!message.mentions.users.size) {
             const embedObj = {
-                title: `**${message.author.user.tag}**`,
+                title: `**${message.author.tag}**`,
                 image: {
-                    url: `${message.author.user.displayAvatarURL({dynamic: true, format: 'png', size: 2048})}`,
+                    url: `${message.author.displayAvatarURL({dynamic: true, format: 'png', size: 2048})}`,
                 },
             }
 
