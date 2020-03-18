@@ -12,8 +12,9 @@ module.exports = {
         key_Word = joinTogetherWords(args, 0);
         quality = 'lowestaudio';
 
-        if (args[1].length)
-            quality = args[1];
+        if (args[1].length) {
+            quality = `${args[1]}audio`;
+        }
             
 
         const voiceChannel = message.member.voice.channel;
