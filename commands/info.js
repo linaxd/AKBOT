@@ -32,17 +32,17 @@ module.exports = {
                 return message.reply(`Please use a proper mentiom`);
             }
 
-            return_string = `**${user.username}**\n`;
-            return_string += `**${user.tag}**`;
-            return_string += `\nUser ID: **${user.id}**`;
+            return_string = `User ID: **${user.id}**`;
             return_string += `\nCreated on: **${user.createdAt}**`;
             //return_string += `\n Avatar URL: <${user.displayAvatarURL({format: 'png', dynamic: true})}>`;
 
             const embedObj = {
                 color: '#00ff00',
                 description: `${return_string}`,
-                file: [`${user.displayAvatarURL({ format: 'png', dynamic: true })}`],
-                image: `attachment${user.displayAvatarURL({dynamic: true})}`,
+                author: {
+                    name: `${user.tag}`,
+                    icon_url: `${user.displayAvatarURL({dynamic: true})}`,
+                },
             };
 
             message.channel.send({ embed: embedObj });
